@@ -2,17 +2,19 @@ import HeroSection from "./section/HeroSection";
 import Loader from "./components/Loader";
 import gsap from "gsap";
 import { useState, useEffect } from "react";
-import { ScrollTrigger, ScrollSmoother } from "gsap/all";
+import { ScrollTrigger, ScrollSmoother,SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import AboutSection from "./section/AboutSection";
+import FeaturedPieces from "./section/FeaturedPieces";
+import Philosophy from "./section/Philosophy-section";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother,SplitText);
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,6 +36,8 @@ function App() {
           <>
             <HeroSection />
             <AboutSection />
+            <FeaturedPieces/>
+            <Philosophy/>
           </>
         )}
       </div>

@@ -12,7 +12,12 @@ const AboutSection = () => {
       opacity: 0,
       y: 10
     });
-
+    gsap.set([...leftImgs], {
+      x: -12
+    })
+    gsap.set([...rightImgs], {
+      x: 12
+    })
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".about-container",
@@ -23,11 +28,12 @@ const AboutSection = () => {
       }
     });
     texts.forEach((text, i) => {
-      tl.to(text, {opacity: 1, y: 0,duration: 0.6,ease: "power2.out" })
-        .to(leftImgs[i], {opacity: 1, y: 0, duration: 0.6,  ease: "power2.out"}, "<")
+      tl.to(text, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" })
+        .to(leftImgs[i], { opacity: 1, y: 0, x: 0, duration: 0.6, ease: "power2.out" }, "<")
         .to(rightImgs[i], {
           opacity: 1,
           y: 0,
+          x: 0,
           duration: 0.6,
           ease: "power2.out"
         }, "<")
@@ -76,7 +82,7 @@ const AboutSection = () => {
         <div className="side-stage left-stage">
           <img src="images/purity1.avif" className="scroll-img" />
           <img src="images/hand-finish1.avif" className="scroll-img" />
-          <img src="images/quality1.avif" className="scroll-img brightness-75" />
+          <img src="images/quality1.avif" className="scroll-img" />
         </div>
 
         {/* RIGHT IMAGES */}

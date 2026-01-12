@@ -25,18 +25,17 @@ const HeroSection = () => {
 
   return (
     <section className="hero-container relative bg-[#0c0c0c]">
-      <div className="bg-[#0c0c0c] absolute size-full inset-0"/>
+      <div className="bg-[#0c0c0c] absolute size-full inset-0" />
       <div className="relative size-full">
-          <LiquidEther
-        colors={["#D4AF37", "#FFD700", "#CFB53B"]}
-        mouseForce={10}
-        cursorSize={100}
-        isBounce
-        autoSpeed={0.2}
-        autoIntensity={1.6}
-      />
+        <LiquidEther
+          colors={["#D4AF37", "#FFD700", "#CFB53B"]}
+          mouseForce={10}
+          cursorSize={100}
+          isBounce
+          autoSpeed={0.2}
+          autoIntensity={1.6}
+        />
       </div>
-    
 
       <div
         ref={textRef}
@@ -59,11 +58,9 @@ const HeroSection = () => {
       </div>
 
       <div className="hero-img-wrapper absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
-        <img
-          src="images/hero-model-img.png"
+        <img src="images/hero-model-img.png"
           alt="model-img"
-          className="hero-img h-[80vh]"
-        />
+          className="hero-img h-[80vh]" />
       </div>
 
     </section>
