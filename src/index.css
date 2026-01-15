@@ -13,9 +13,13 @@
     src: url('/fonts/Tangerine-Regular.ttf') format('truetype');
 }
 
-.hero-bg-gradient {
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-    font-family: 'Imperial Script', cursive;
+:root {
+    --color-black: #0c0c0c;
+    --color-gold: #D4AF37;
+    --light-gold : #D4AF3740;
+    --color-dark-gray: #1c1c1c;
+    --color-white: #f6f1e7;
+    --color-gray : #373539;
 }
 
 html,
@@ -25,7 +29,7 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    background-color: #0c0c0c;
+    background-color: var(--color-black);
     scrollbar-width: none;
     /* Firefox */
     -ms-overflow-style: none;
@@ -40,16 +44,16 @@ body::-webkit-scrollbar {
 @layer utilities {
 
     .hero-container {
-        @apply relative w-screen h-dvh overflow-hidden bg-black;
+        @apply relative w-screen h-dvh overflow-hidden bg-(--color-gray);
     }
 
     .hero-title {
         font-family: 'FunnelDisplay', monospace;
-        @apply text-[#e3e3e5] 2xl:text-[20rem] md:text-[16rem] text-[12rem] leading-[9vw] absolute top-20 left-1/2 -translate-x-1/2 z-10;
+        @apply text-(--color-gold) 2xl:text-[20rem] md:text-[16rem] text-[12rem] leading-[9vw] absolute top-20 left-1/2 -translate-x-1/2 z-10;
     }
 
     .hero-bottom {
-        @apply absolute bottom-10 left-0 w-full text-[#cececf] flex md:flex-row flex-col justify-between items-center px-10 z-20;
+        @apply absolute bottom-10 left-0 w-full text-(--color-gold) flex md:flex-row flex-col justify-between items-center px-10 z-20;
     }
 
     .hero-sub-title {
@@ -72,7 +76,7 @@ body::-webkit-scrollbar {
     }
 
     .scroll-section {
-        @apply relative h-screen w-full;
+        @apply relative h-screen w-full bg-(--color-black);
     }
 
     .center-stage {
@@ -81,7 +85,7 @@ body::-webkit-scrollbar {
 
     .static-title {
         font-family: 'FunnelDisplay', monospace;
-        @apply text-3xl tracking-wide text-[#e3e3e5];
+        @apply text-3xl tracking-wide text-[var(--color-white)];
     }
 
     .dynamic-text {
@@ -90,17 +94,14 @@ body::-webkit-scrollbar {
 
     .scroll-text {
         font-family: 'Tangerine', cursive;
-        @apply text-[#D4AF37] absolute text-[4em] leading-none whitespace-nowrap opacity-0;
+        @apply text-[var(--color-gold)] mt-2 absolute text-[4em] leading-none whitespace-nowrap opacity-0;
     }
 
     /* SIDE IMAGES */
     .side-stage {
         @apply absolute top-1/2 transform -translate-y-1/2;
-        /* center vertically */
         @apply w-[28em] h-[40em];
     }
-
-    /* Left and right stage positions */
     .left-stage {
         @apply left-8;
     }
@@ -109,15 +110,18 @@ body::-webkit-scrollbar {
         @apply right-8;
     }
 
-    /* Images behave like scroll-text: stacked, absolute, same position */
     .scroll-img {
         @apply absolute inset-0 h-full w-full object-cover opacity-0 rounded-xl;
     }
 
+/* Featured Section */
+.featured-container{
+       font-family: 'FunnelDisplay', monospace;
+}
     /* Philosophy section */
 
     .philosophy-container {
-        @apply relative w-screen h-[400dvh] bg-[#f6f1e7] overflow-hidden;
+        @apply relative w-screen h-[100dvh] bg-[var(--color-dark-gray)] overflow-hidden;
     }
 
     .philosophy-bg {
@@ -134,7 +138,7 @@ body::-webkit-scrollbar {
     }
 
     .ph-scroll-text {
-        @apply absolute leading-none whitespace-nowrap opacity-0 ;
+        @apply absolute leading-none whitespace-nowrap opacity-0;
     }
 
 }

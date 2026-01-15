@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import AboutSection from "./section/AboutSection";
 import FeaturedPieces from "./section/FeaturedPieces";
 import Philosophy from "./section/Philosophy-section";
+import CTA from "./section/CTA";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother,SplitText);
 
@@ -38,6 +39,7 @@ function App() {
             <AboutSection />
             <FeaturedPieces/>
             <Philosophy/>
+            <CTA/>
           </>
         )}
       </div>

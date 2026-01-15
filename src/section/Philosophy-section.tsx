@@ -10,9 +10,8 @@ const Philosophy = () => {
       scrollTrigger: {
         trigger: ".philosophy-container",
         start: "top top",
-        end: "+=400%",
+        end: "+=300%",
         scrub: 0.8,
-        markers: true,
         pin: ".philosophy-container",
       },
     });
@@ -28,7 +27,7 @@ const Philosophy = () => {
         filter: "blur(0px)",
         ease: "circ.inOut",
       }
-    );
+    ).to({},{duration:0.2})
 
     const phrases = gsap.utils.toArray<HTMLElement>(".ph-scroll-text");
     gsap.set(phrases,{
