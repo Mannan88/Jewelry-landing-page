@@ -20,7 +20,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ url, sizing, altText }) => {
         "
             >
                 <button className="absolute bottom-4 right-6 text-lg text-white">
-                    Explore
+                    Explore more
                 </button>
             </div>
             <img
