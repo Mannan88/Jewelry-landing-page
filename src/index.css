@@ -14,12 +14,12 @@
 }
 
 :root {
-    --color-black: #0c0c0c;
-    --color-gold: #D4AF37;
+    --cool-black: #010101;
+    --plain-gold: #D4AF37;
     --light-gold : #D4AF3740;
-    --color-dark-gray: #1c1c1c;
-    --color-white: #f6f1e7;
-    --color-gray : #373539;
+    ---dark-gray: #1c1c1c;
+    --warm-white: #f6f1e7;
+    --plain-gray : #373539;
 }
 
 html,
@@ -29,7 +29,7 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    background-color: var(--color-black);
+    background-color: var(--cool-black);
     scrollbar-width: none;
     /* Firefox */
     -ms-overflow-style: none;
@@ -44,16 +44,16 @@ body::-webkit-scrollbar {
 @layer utilities {
 
     .hero-container {
-        @apply relative w-screen h-dvh overflow-hidden bg-(--color-gray);
+        @apply relative w-screen h-dvh overflow-hidden bg-(--plain-gray);
     }
 
     .hero-title {
         font-family: 'FunnelDisplay', monospace;
-        @apply text-(--color-gold) 2xl:text-[20rem] md:text-[16rem] text-[12rem] leading-[9vw] absolute top-20 left-1/2 -translate-x-1/2 z-10;
+        @apply text-(--plain-gold) 2xl:text-[20rem] md:text-[16rem] text-[12rem] leading-[9vw] absolute top-20 left-1/2 -translate-x-1/2 z-10;
     }
 
     .hero-bottom {
-        @apply absolute bottom-10 left-0 w-full text-(--color-gold) flex md:flex-row flex-col justify-between items-center px-10 z-20;
+        @apply absolute bottom-10 left-0 w-full text-(--plain-gold) flex md:flex-row flex-col justify-between items-center px-10 z-20;
     }
 
     .hero-sub-title {
@@ -76,7 +76,7 @@ body::-webkit-scrollbar {
     }
 
     .scroll-section {
-        @apply relative h-screen w-full bg-(--color-black);
+        @apply relative h-screen w-full bg-(--cool-black);
     }
 
     .center-stage {
@@ -85,7 +85,7 @@ body::-webkit-scrollbar {
 
     .static-title {
         font-family: 'FunnelDisplay', monospace;
-        @apply text-3xl tracking-wide text-[var(--color-white)];
+        @apply text-[5em] tracking-wide text-[var(--plain-gold)];
     }
 
     .dynamic-text {
@@ -94,7 +94,7 @@ body::-webkit-scrollbar {
 
     .scroll-text {
         font-family: 'Tangerine', cursive;
-        @apply text-[var(--color-gold)] mt-2 absolute text-[4em] leading-none whitespace-nowrap opacity-0;
+        @apply text-[var(--warm-white)] mt-2 absolute text-[4em] leading-none whitespace-nowrap opacity-0;
     }
 
     /* SIDE IMAGES */
@@ -115,13 +115,11 @@ body::-webkit-scrollbar {
     }
 
 /* Featured Section */
-.featured-container{
-       font-family: 'FunnelDisplay', monospace;
-}
+
     /* Philosophy section */
 
     .philosophy-container {
-        @apply relative w-screen h-[100dvh] bg-[var(--color-dark-gray)] overflow-hidden;
+        @apply relative w-screen h-dvh bg-[var(--dark-gray)] overflow-hidden text-[var(--warm-white)];
     }
 
     .philosophy-bg {
@@ -138,7 +136,7 @@ body::-webkit-scrollbar {
     }
 
     .ph-scroll-text {
-        @apply absolute leading-none whitespace-nowrap opacity-0;
+        @apply absolute leading-none whitespace-nowrap;
     }
 
 }

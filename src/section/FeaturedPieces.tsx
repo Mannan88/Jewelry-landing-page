@@ -12,7 +12,16 @@ const FeaturedPieces = () => {
       opacity: 0,
       y: 20
     });
-
+   gsap.from(".featured-bg",{
+    scrollTrigger:{
+      trigger:".featured-container",
+      start:"top center",
+      end:"+=100%",
+      scrub:true,
+    },
+    scale:0.9,
+    borderRadius:"40px"
+   })
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".featured-container",
@@ -24,12 +33,12 @@ const FeaturedPieces = () => {
     });
     grids.forEach((grid, i) => {
 
-      tl.to(btnRefs.current[i], {backgroundImage: "linear-gradient(to left, transparent, var(--color-gold))",duration: 1, ease: "power1.inOut"})
+      tl.to(btnRefs.current[i], {backgroundImage: "linear-gradient(to left, transparent, var(--plain-gold))",duration: 0.8, ease: "power1.inOut"})
         .to(grid, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, "<")
 
         .to({}, { duration: 0.6 })
 
-        .to(btnRefs.current[i], { backgroundImage: "transparent", duration: 1 })
+        .to(btnRefs.current[i], { backgroundImage: "none", duration: 0.6 })
         .to(grid, { opacity: 0, y: -20, duration: 0.6, ease: "power2.in" }, "<")
     });
 
@@ -37,12 +46,12 @@ const FeaturedPieces = () => {
 
   return (
     <section className="featured-container h-[500dvh] w-full relative">
-      <div className="bg-(--color-gray) size-full text-(--color-white)">
+      <div className="  featured-bg bg-(--plain-gray) size-full text-(--warm-white)">
         <div className="featured-pin size-full relative overflow-hidden">
 
 
-          <div className="fp-left-side w-[40%] h-dvh flex flex-col py-20 px-12 text-5xl justify-between absolute inset-0">
-            <h2 className="text-8xl  text-(--color-gold)">Featured Pieces.</h2>
+          <div className=" py-20 px-12 text-5xl justify-between">
+            <h2 className="text-8xl text-(--plain-gold)">Featured Pieces.</h2>
             <ButtonFp ref={(el) => { if (el) btnRefs.current[0] = el }} btntext="Rings" />
             <ButtonFp ref={(el) => { if (el) btnRefs.current[1] = el }} btntext="Earrings" />
             <ButtonFp ref={(el) => { if (el) btnRefs.current[2] = el }} btntext="Necklaces" />
@@ -50,7 +59,7 @@ const FeaturedPieces = () => {
 
           </div>
 
-          <div className="fp-right-side absolute w-[60%] top-0 right-0 h-dvh ">
+          <div className="">
             <div className="img-grid absolute top-0 right-0 grid grid-cols-2 grid-rows-2 h-dvh p-12 gap-6">
               <ImageCard url="images/ring1.avif"
                 altText="Ring-Showcase-1"

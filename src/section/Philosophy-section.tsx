@@ -26,6 +26,7 @@ const Philosophy = () => {
         clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
         filter: "blur(0px)",
         ease: "circ.inOut",
+        duration:2
       }
     ).to({},{duration:0.2})
 
@@ -45,19 +46,33 @@ const Philosophy = () => {
   });
 
   return (
-    <section className="philosophy-container">
-      <div className="philosophy-bg">
-        <div className="ph-text">
-          <h2 className="ph-reveal-text">It isn't just an accessory.</h2>
-          <div className="ph-dynamic-text ">
-            <h2 className="ph-scroll-text">Its Expression.</h2>
-            <h2 className="ph-scroll-text">Its Identity.</h2>
-            <h2 className="ph-scroll-text">Its Confidence.</h2>
-            <h2 className="ph-scroll-text">Its You.</h2>
-          </div>
+
+    <section className="philosophy-container ">
+         <video src="video/ph-bg-vid.mp4"
+        className="absolute size-full inset-0 object-cover z-0 brightness-75 blur-md"
+        autoPlay
+        playsInline
+        muted
+        loop
+        />
+  <div className="philosophy-pin">
+
+    <div className="philosophy-bg">
+      <div className="ph-text">
+        <h2 className="ph-reveal-text">It isn't just an accessory.</h2>
+
+        <div className="ph-dynamic-text">
+          <h2 className="ph-scroll-text">Its Expression.</h2>
+          <h2 className="ph-scroll-text">Its Identity.</h2>
+          <h2 className="ph-scroll-text">Its Confidence.</h2>
+          <h2 className="ph-scroll-text">Its You.</h2>
         </div>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
   );
 };
 

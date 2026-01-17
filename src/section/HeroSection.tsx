@@ -37,7 +37,7 @@ const HeroSection = () => {
 
     heroTl.to(".hero-container", {
       scale: 0.9,
-      borderRadius: "20px",
+      borderRadius: "40px",
       ease: "power1.inOut",
     });
   });

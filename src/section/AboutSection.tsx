@@ -69,7 +69,7 @@ const AboutSection = () => {
 
         {/* CENTER TEXT STAGE */}
         <div className="center-stage">
-          <h2 className="static-title">We offer</h2>
+          <h2 className="static-title">We offer.</h2>
 
           <div className="dynamic-text">
             <p className="scroll-text">Refined Purity.</p>

@@ -8,6 +8,7 @@ import AboutSection from "./section/AboutSection";
 import FeaturedPieces from "./section/FeaturedPieces";
 import Philosophy from "./section/Philosophy-section";
 import CTA from "./section/CTA";
+import FeaturedSection from "./section/FeaturedSection";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother,SplitText);
 
@@ -37,7 +38,8 @@ function App() {
           <>
             <HeroSection />
             <AboutSection />
-            <FeaturedPieces/>
+            {/* <FeaturedPieces/> */}
+            <FeaturedSection/>
             <Philosophy/>
             <CTA/>
           </>
