@@ -14,7 +14,7 @@
 }
 
 :root {
-    --cool-black: #010101;
+    --cool-black: #101010;
     --plain-gold: #D4AF37;
     --light-gold : #D4AF3740;
     ---dark-gray: #1c1c1c;
@@ -118,22 +118,22 @@ body::-webkit-scrollbar {
 
     /* Philosophy section */
 
-    .philosophy-container {
-        @apply relative w-screen h-dvh bg-[var(--dark-gray)] overflow-hidden text-[var(--warm-white)];
-    }
+    /* .philosophy-container {
+        @apply 
+    } */
 
-    .philosophy-bg {
-        @apply sticky inset-0 h-dvh w-full;
-    }
+    /* .philosophy-bg {
+        @apply ;
+    } */
 
-    .ph-text {
+    /* .ph-text {
         font-family: 'FunnelDisplay', monospace;
-        @apply absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 justify-center w-[30em] h-[4em] flex gap-4 text-4xl leading-[9vw] items-center;
+        @apply ;
     }
 
     .ph-dynamic-text {
-        @apply relative h-[4em] w-[6em] flex justify-start items-center;
-    }
+        @apply ;
+    } */
 
     .ph-scroll-text {
         @apply absolute leading-none whitespace-nowrap;

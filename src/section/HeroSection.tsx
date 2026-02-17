@@ -67,10 +67,10 @@ const HeroSection = () => {
             <p>Accessories designed to Endure.</p>
           </div>
 
-          <div className="hero-cta-div">
+          <div className="hero-cta-div items-center">
             <button className="hero-cta">Shop now</button>
             <img
-              src="images/svg/up-right-arrow.svg"
+              src="images/svg/up-right-arrow-yellow.svg"
               alt="shop-now"
               className="size-6"
             />

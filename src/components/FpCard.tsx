@@ -32,18 +32,18 @@ const FpCard: React.FC<fpCardProps> = ({ name, description }) => {
   const handleLeave = () => timelineRef.current?.reverse()
 
   return (
-    <div className="fp-card relative flex-wrap max-w-[20em] rounded-md bg-(--cool-black)">
+    <div className="fp-card relative flex-wrap max-w-[18em] rounded-md bg-(--cool-black)">
       <div
         ref={cardRef}
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
         style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-        className="fp-img-container relative object-cover max-w-[18em] h-[18em] z-10 p-2 bg-[#01010160]"
+        className="fp-img-container rounded-md relative object-cover max-w-[20em] h-[18em] z-10 p-2 bg-[#01010160]"
       >
         <img
           src={`images/${name}1.avif`}
           alt={`${name}-showcase`}
-          className=" w-full h-full object-cover  rounded-md"
+          className=" w-full h-full object-cover rounded-md"
         />
       </div>
       <img

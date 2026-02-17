@@ -15,19 +15,22 @@ const FeaturedSection = () => {
     const cards = gsap.utils.toArray<HTMLElement>(".fp-card")
 
     gsap.set(cards, { opacity: 0, y: 20, scale: 0.9 })
-   gsap.fromTo(".featured-pin",
-  { scale: 0.9, borderRadius: "40px" },
-  {
-    scale: 1,
-    borderRadius: "0px",
-    scrollTrigger: {
-      trigger: ".featured-container",
-      start: "top center",
-      end: "+=100%",
-      scrub: true,
-    }
-  }
-)
+
+    gsap.fromTo(
+      ".featured-pin",
+      { scale: 0.9, borderRadius: "40px" },
+      {
+        scale: 1,
+        borderRadius: "0px",
+        scrollTrigger: {
+          trigger: ".featured-container",
+          start: "top center",
+          end: "top top",
+          scrub: true,
+        }
+      }
+    )
+  
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".featured-container",
@@ -49,17 +52,18 @@ const FeaturedSection = () => {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.8,
         stagger: 0.2,
+        duration: 0.4,
         ease: "power1.inOut",
       }
-    )
-    tl.to({}, { duration: 0.4 })
+    ).to({}, { duration: 0.8 })
+
   }, [])
 
   return (
-    <section className="featured-container h-[300vh] relative">
-      <div className="featured-pin bg-(--plain-gray) min-h-dvh p-4">
+    <section className="featured-container h-[300vh] relative z-10">
+      
+      <div className="featured-pin bg-(--plain-gray) min-h-dvh p-4 z-10">
         <h2
           style={{ fontFamily: "'FunnelDisplay', monospace" }}
           className="text-8xl text-(--plain-gold) mx-8 mt-8 mb-12"
@@ -77,6 +81,7 @@ const FeaturedSection = () => {
           <FpCard name="bracelet" description="Gracefully refined charm." />
         </div>
       </div>
+   
     </section>
   )
 }
