@@ -35,10 +35,10 @@ function App() {
           <Loader />
         ) : (
           <>
-            <HeroSection />
+            {/* <HeroSection />
             <AboutSection />
             <FeaturedSection/>
-            <Philosophy/>
+            <Philosophy/> */}
             <CTA/>
           </>
         )}

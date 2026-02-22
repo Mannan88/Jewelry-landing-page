@@ -1,18 +1,61 @@
-
 const CTA = () => {
+  const cards = [
+    { id: 1, name: "rings", imgUrl: "images/cta_images/cta1.avif" },
+    { id: 2, name: "rings", imgUrl: "images/cta_images/cta2.avif" },
+    { id: 3, name: "rings", imgUrl: "images/cta_images/cta3.avif" },
+    { id: 4, name: "rings", imgUrl: "images/cta_images/cta4.avif" },
+    { id: 5, name: "rings", imgUrl: "images/cta_images/cta5.avif" },
+    { id: 6, name: "rings", imgUrl: "images/cta_images/cta6.avif" },
+    { id: 7, name: "rings", imgUrl: "images/cta_images/cta7.avif" },
+    { id: 8, name: "rings", imgUrl: "images/cta_images/cta7.avif" },
+    { id: 9, name: "rings", imgUrl: "images/cta_images/cta7.avif" },
+    { id: 10, name: "rings", imgUrl: "images/cta_images/cta7.avif" },
+  ];
 
+  const totalLen = cards.length;
 
-    return (
-        <section className="cta-container relative h-dvh w-full bg-[var(--plain-gray)] overflow-hidden ">
-            <div style={{
-                fontFamily: "FunnelDisplay"
-            }} className="cta-explore-btn  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center text-[5rem] cursor-pointer">
-                <button className="cursor-pointer text-[var(--plain-gold)]">Explore More</button>
-                <img src="images/svg/up-right-arrow-yellow.svg" alt="shop-now"
-                    className="size-20 ml-2" />
-            </div>
+  return (
+    <div className="h-dvh w-dvw bg-[var(--plain-gray)] flex">
+      <div className="carousel-container relative flex-1 overflow-hidden text-center">
+        <h2
+          style={{ fontFamily: "'FunnelDisplay', monospace" }}
+          className="text-8xl text-[var(--plain-gold)] mx-auto mt-8"
+        >
+          Explore More.
+        </h2>
+        <div
+          className="carousel-slider absolute inset-0 flex items-baseline justify-center"
+          style={{
+            perspective: "800px",
+            transformStyle: "preserve-3d",
+          }}
+        >
+          {cards.map((card, index) => {
+            const rotation = index * (360 / totalLen);
 
-        </section>
-    )
-}
-export default CTA
+            return (
+              <div
+                key={card.id}
+                className="carousel-card absolute w-100 h-200 rounded-xl overflow-hidden"
+                style={{
+                  transform: `
+                    rotateY(${rotation}deg)
+                    translateZ(1000px)
+                  `,
+                }}
+              >
+                <img
+                  src={card.imgUrl}
+                  alt={card.name}
+                  className="size-full object-cover"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CTA;
