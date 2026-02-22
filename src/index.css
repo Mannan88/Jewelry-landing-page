@@ -16,10 +16,10 @@
 :root {
     --cool-black: #101010;
     --plain-gold: #D4AF37;
-    --light-gold : #D4AF3740;
+    --light-gold: #D4AF3740;
     ---dark-gray: #1c1c1c;
     --warm-white: #f6f1e7;
-    --plain-gray : #373539;
+    --plain-gray: #373539;
 }
 
 html,
@@ -102,6 +102,7 @@ body::-webkit-scrollbar {
         @apply absolute top-1/2 transform -translate-y-1/2;
         @apply w-[28em] h-[40em];
     }
+
     .left-stage {
         @apply left-8;
     }
@@ -114,7 +115,7 @@ body::-webkit-scrollbar {
         @apply absolute inset-0 h-full w-full object-cover opacity-0 rounded-xl;
     }
 
-/* Featured Section */
+    /* Featured Section */
 
     /* Philosophy section */
 
@@ -138,5 +139,20 @@ body::-webkit-scrollbar {
     .ph-scroll-text {
         @apply absolute leading-none whitespace-nowrap;
     }
+
+}
+
+@theme {
+
+    --animate-rotation: rotation 40s linear infinite;
+
+   @keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
 
 }

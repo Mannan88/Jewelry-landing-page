@@ -1,4 +1,6 @@
+import { useRef } from "react";
 const CTA = () => {
+  const carouselRef = useRef<HTMLDivElement>(null)
   const cards = [
     { id: 1, name: "rings", imgUrl: "images/cta_images/cta1.avif" },
     { id: 2, name: "rings", imgUrl: "images/cta_images/cta2.avif" },
@@ -16,7 +18,9 @@ const CTA = () => {
 
   return (
     <div className="h-dvh w-dvw bg-[var(--plain-gray)] flex">
-      <div className="carousel-container relative flex-1 overflow-hidden text-center">
+      <div className="carousel-container relative flex-1 overflow-hidden text-center"
+        style={{ perspective: "600px" }}>
+
         <h2
           style={{ fontFamily: "'FunnelDisplay', monospace" }}
           className="text-8xl text-[var(--plain-gold)] mx-auto mt-8"
@@ -24,26 +28,32 @@ const CTA = () => {
           Explore More.
         </h2>
         <div
-          className="carousel-slider absolute inset-0 flex items-baseline justify-center"
+          ref={carouselRef}
+          className="carousel-slider absolute inset-0 flex items-center justify-center animate-rotation perspective-origin-center m-auto"
           style={{
-            perspective: "800px",
+
             transformStyle: "preserve-3d",
+
+
           }}
         >
           {cards.map((card, index) => {
             const rotation = index * (360 / totalLen);
-
             return (
               <div
                 key={card.id}
-                className="carousel-card absolute w-100 h-200 rounded-xl overflow-hidden"
+                className="carousel-card absolute w-100 h-180 rounded-xl overflow-hidden"
                 style={{
-                  transform: `
-                    rotateY(${rotation}deg)
-                    translateZ(1000px)
-                  `,
+                  top: "50%",
+                  left: "50%",
+                  transform: `translate(-50%, -50%)
+                              rotateY(${rotation}deg)
+                              translateZ(780px)
+                            `,
+                  transformStyle: "preserve-3d",
                 }}
               >
+
                 <img
                   src={card.imgUrl}
                   alt={card.name}
