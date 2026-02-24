@@ -49,20 +49,20 @@ body::-webkit-scrollbar {
 
     .hero-title {
         font-family: 'FunnelDisplay', monospace;
-        @apply text-(--plain-gold) 2xl:text-[20rem] md:text-[16rem] text-[12rem] leading-[9vw] absolute top-20 left-1/2 -translate-x-1/2 z-10;
+        @apply text-(--plain-gold) 2xl:text-[20rem]  lg:text-[14rem] md:text-[10rem] text-[6rem] leading-[9vw] absolute top-20 left-1/2 -translate-x-1/2 z-10;
     }
 
     .hero-bottom {
-        @apply absolute bottom-10 left-0 w-full text-(--plain-gold) flex md:flex-row flex-col justify-between items-center px-10 z-20;
+        @apply absolute sm:bottom-10 bottom-4 left-0 w-full text-(--plain-gold) flex flex-row justify-between items-center px-4 sm:px-10 z-20;
     }
 
     .hero-sub-title {
         font-family: 'Tangerine', cursive;
-        @apply 2xl:text-[8rem] md:text-[3rem] text-[2rem] z-20;
+        @apply 2xl:text-[4rem] md:text-[3rem] text-[1.6rem] z-20;
     }
 
     .hero-cta-div {
-        @apply flex items-center gap-2 align-baseline cursor-pointer p-2 mr-12 hover:ring-1 hover:scale-105 rounded-md transition-all duration-300 ease-in-out;
+        @apply flex items-center gap-2 align-baseline cursor-pointer p-2 hover:ring-1 hover:scale-105 rounded-md transition-all duration-300 ease-in-out;
     }
 
     .hero-cta {

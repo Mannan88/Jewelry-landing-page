@@ -55,14 +55,14 @@ const Philosophy = () => {
         .to(phrase, {
           opacity: 1,
           y: 0,
-          duration: 0.5,
+          duration: 0.2,
           ease: "power2.out",
         })
         .to(
           progressBars[index],
           {
             scaleX: 1,
-            duration: 1.5,
+            duration: 1,
             ease: "none",
           },
           "<"
@@ -71,7 +71,7 @@ const Philosophy = () => {
         .to(phrase, {
           opacity: 0,
           y: -20,
-          duration: 0.5,
+          duration: 0.2,
           ease: "power2.in",
         })
         .set(progressBars[index], { scaleX: 0 });
@@ -85,7 +85,7 @@ const Philosophy = () => {
      
        <video
           src="video/ph-bg-vid.mp4"
-          className="w-full h-full absolute inset-0 object-cover brightness-75 blur-md"
+          className="w-full h-full absolute inset-0 object-cover brightness-75 blur-sm md:blur-md"
           autoPlay
           playsInline
           muted
@@ -96,7 +96,7 @@ const Philosophy = () => {
         className="philosophy-pin relative z-10"
       >
         <div className="philosophy-bg h-dvh w-full">
-          <div className="ph-text absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 justify-center w-[30em] h-[4em] flex gap-4 text-4xl leading-[9vw] items-center">
+          <div className="ph-text absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 justify-center w-[30em] h-[4em] flex gap-4 text-xl  sm:text-2xl md:text-4xl leading-[9vw] items-center">
             <h2 className="ph-reveal-text">It isn't just an accessory.</h2>
 
             <div className="ph-dynamic-text relative h-[4em] w-[6em] flex justify-start items-center">

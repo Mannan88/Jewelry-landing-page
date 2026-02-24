@@ -3,47 +3,18 @@ type fpCardProps = {
   description: string
 }
 
-import gsap from "gsap"
-import { useRef, useEffect } from "react"
-
 const FpCard: React.FC<fpCardProps> = ({ name, description }) => {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const timelineRef = useRef<gsap.core.Timeline | null>(null)
-
-  useEffect(() => {
-    if (!cardRef.current) return
-
-    timelineRef.current = gsap.timeline({ paused: true })
-      .to(cardRef.current, {
-        clipPath: "polygon(0% 80%, 100% 24%, 100% 24%, 0% 80%)",
-        duration: 0.6
-      })
-      .to(cardRef.current, {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        duration: 0.3
-      })
-
-    return () => {
-      timelineRef.current?.kill()
-    }
-  }, [])
-
-  const handleEnter = () => timelineRef.current?.play()
-  const handleLeave = () => timelineRef.current?.reverse()
-
   return (
-    <div className="fp-card relative flex-wrap max-w-[18em] rounded-md bg-(--cool-black)">
+    <div className="fp-card cursor-pointer relative flex-wrap max-w-[18em] rounded-md bg-(--cool-black)">
       <div
-        ref={cardRef}
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
-        style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)" }}
-        className="fp-img-container rounded-md relative object-cover max-w-[20em] h-[18em] z-10 p-2 bg-[#01010160]"
+        className="fp-img-container rounded-md relative object-cover max-w-[20em] h-[18em] z-10 p-2 bg-[#01010160]
+                   transition-all duration-800 ease-in-out
+                   hover:opacity-0 hover:blur-md"
       >
         <img
           src={`images/${name}1.avif`}
           alt={`${name}-showcase`}
-          className=" w-full h-full object-cover rounded-md"
+          className="w-full h-full object-cover rounded-md"
         />
       </div>
       <img

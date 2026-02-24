@@ -58,7 +58,7 @@ const HeroSection = () => {
 
       <div className="hero-content relative z-10 size-full">
 
-        <div ref={textRef} className="hero-title">
+        <div ref={textRef} className="hero-title sm:text-xl">
           <h1>Elegance.</h1>
         </div>
 
@@ -77,11 +77,11 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="hero-img-wrapper absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
+        <div className="hero-img-wrapper absolute bottom-0 md:w-160 sm:w-150 w-140 left-1/2 shrink-0 -translate-x-1/2 z-10">
           <img
             src="images/hero-model-img.png"
             alt="model-img"
-            className="hero-img h-[80vh]"
+            className="hero-img object-cover shrink-0"
           />
         </div>
 
