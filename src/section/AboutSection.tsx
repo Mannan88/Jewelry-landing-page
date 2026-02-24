@@ -64,34 +64,52 @@ const AboutSection = () => {
 
 
   return (
-    <section className="about-container ">
-      <div className="scroll-section">
+    <section className="about-container h-[400dvh] relative">
+      <div className="scroll-section relative h-screen w-full bg-(--cool-black)">
 
         {/* CENTER TEXT STAGE */}
-        <div className="center-stage">
-          <h2 className="static-title">We offer.</h2>
+        <div className="center-stage absolute inset-0 md:mt-0 mt-6 flex flex-col items-center lg:justify-center text-center pointer-events-none z-100">
+          <h2
+            className="static-title md:text-[5em] text-[3em]  tracking-wide text-[var(--plain-gold)] bg-(--cool-black) px-4 rounded-lg"
+            style={{ fontFamily: "'FunnelDisplay',monospace" }}
+          >
+            We offer.
+          </h2>
 
-          <div className="dynamic-text">
-            <p className="scroll-text">Refined Purity.</p>
-            <p className="scroll-text">Hand-finish.</p>
-            <p className="scroll-text">Quality Materials.</p>
+          <div
+            style={{ fontFamily: "'Tangerine', cursive" }}
+            className="dynamic-text relative h-[4em] w-[20em] flex items-center justify-center"
+          >
+            <p className="scroll-text text-[var(--warm-white)] mt-2 absolute text-[4em] leading-none whitespace-nowrap opacity-0">
+              Refined Purity.
+            </p>
+            <p className="scroll-text text-[var(--warm-white)] mt-2 absolute text-[4em] leading-none whitespace-nowrap opacity-0">
+              Hand-finish.
+            </p>
+            <p className="scroll-text text-[var(--warm-white)] mt-2 absolute text-[4em] leading-none whitespace-nowrap opacity-0">
+              Quality Materials.
+            </p>
           </div>
         </div>
 
-        {/* LEFT IMAGES */}
-        <div className="side-stage left-stage">
-          <img src="images/purity1.avif" className="scroll-img" />
-          <img src="images/hand-finish1.avif" className="scroll-img" />
-          <img src="images/quality1.avif" className="scroll-img" />
-        </div>
+        {/* IMAGE CONTAINER */}
+        <div className="about-img-container relative h-dvh mt-8 mx-auto w-full flex justify-around">
 
-        {/* RIGHT IMAGES */}
-        <div className="side-stage right-stage">
-          <img src="images/purity2.avif" className="scroll-img" />
-          <img src="images/hand-finish2.avif" className="scroll-img" />
-          <img src="images/quality2.avif" className="scroll-img brightness-75" />
-        </div>
+          {/* LEFT IMAGES */}
+          <div className="side-stage lg:w-[28em] lg:h-[40em] w-[19em] h-[30em] left-stage absolute lg:left-8 sm:left-10 lg:top-8 bottom-8
+          left-1/2 -translate-x-1/2 sm:translate-x-0">
+            <img src="images/purity1.avif" className="scroll-img absolute h-full w-full object-cover opacity-0 rounded-xl" />
+            <img src="images/hand-finish1.avif" className="scroll-img absolute h-full w-full object-cover opacity-0 rounded-xl" />
+            <img src="images/quality1.avif" className="scroll-img absolute h-full w-full object-cover opacity-0 rounded-xl" />
+          </div>
 
+          {/* RIGHT IMAGES */}
+          <div className="side-stage lg:w-[28em] lg:h-[40em] w-[19em] h-[30em] right-stage absolute lg:right-8 sm:right-10  lg:top-8 bottom-8 sm:opacity-100 opacity-0">
+            <img src="images/purity2.avif" className="scroll-img absolute h-full w-full object-cover opacity-0 rounded-xl" />
+            <img src="images/hand-finish2.avif" className="scroll-img absolute h-full w-full object-cover opacity-0 rounded-xl" />
+            <img src="images/quality2.avif" className="scroll-img brightness-75 absolute h-full w-full object-cover opacity-0 rounded-xl" />
+          </div>
+        </div>
       </div>
     </section>
   )

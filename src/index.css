@@ -71,7 +71,7 @@ body::-webkit-scrollbar {
     }
 
     /* About section */
-    .about-container {
+    /* .about-container {
         @apply h-[400dvh] relative;
     }
 
@@ -98,7 +98,7 @@ body::-webkit-scrollbar {
     }
 
     /* SIDE IMAGES */
-    .side-stage {
+    /* .side-stage {
         @apply absolute top-1/2 transform -translate-y-1/2;
         @apply w-[28em] h-[40em];
     }
@@ -112,8 +112,8 @@ body::-webkit-scrollbar {
     }
 
     .scroll-img {
-        @apply absolute inset-0 h-full w-full object-cover opacity-0 rounded-xl;
-    }
+        @apply ;
+    } */ */
 
     /* Featured Section */
 
